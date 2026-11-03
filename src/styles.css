@@ -1,0 +1,64 @@
+:root {
+  --bg: #f5f7fa;
+  --card: #ffffff;
+  --text: #1c2430;
+  --muted: #5f6b7a;
+  --line: #d9e0e8;
+  --accent: #1f5fa8;
+  --ok: #1e7f4f;
+  --warn: #b3261e;
+  --amber: #8a5a00;
+  font-family: system-ui, -apple-system, 'Hiragino Sans', 'Noto Sans JP', sans-serif;
+  color: var(--text);
+  background: var(--bg);
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #12161c;
+    --card: #1b2129;
+    --text: #e6ebf1;
+    --muted: #9aa6b4;
+    --line: #2c3540;
+    --accent: #6ea8ff;
+    --ok: #4cc38a;
+    --warn: #ff8a80;
+    --amber: #e0b04d;
+  }
+}
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--bg); }
+.app { max-width: 760px; margin: 0 auto; padding: 16px; }
+header { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: baseline; gap: 8px; }
+h1 { font-size: 1.4rem; margin: 0; }
+.summary { display: flex; gap: 12px; color: var(--muted); }
+.summary b { color: var(--text); }
+.summary .warn b { color: var(--warn); }
+nav { display: flex; gap: 4px; margin: 16px 0; border-bottom: 1px solid var(--line); }
+nav button { background: none; border: none; border-bottom: 2px solid transparent; color: var(--muted); padding: 8px 12px; cursor: pointer; font-size: 0.95rem; }
+nav button.active { color: var(--accent); border-bottom-color: var(--accent); font-weight: 600; }
+button { background: var(--accent); color: #fff; border: none; border-radius: 6px; padding: 8px 14px; cursor: pointer; font-size: 0.9rem; }
+button.ghost { background: transparent; color: var(--accent); border: 1px solid var(--line); }
+input { width: 100%; padding: 8px 10px; border: 1px solid var(--line); border-radius: 6px; background: var(--card); color: var(--text); font-size: 0.95rem; }
+.search { margin-bottom: 12px; }
+.message { padding: 8px 12px; border-radius: 6px; background: var(--card); border-left: 4px solid var(--ok); }
+.message.error { border-left-color: var(--warn); }
+.devices { list-style: none; padding: 0; margin: 0; display: grid; gap: 8px; }
+.devices li { background: var(--card); border: 1px solid var(--line); border-radius: 8px; padding: 12px; }
+.devices li.overdue { border-color: var(--warn); }
+.row { display: flex; justify-content: space-between; gap: 8px; align-items: center; }
+small { color: var(--muted); }
+.badge { font-size: 0.8rem; padding: 2px 8px; border-radius: 999px; border: 1px solid currentColor; white-space: nowrap; }
+.badge.available { color: var(--ok); }
+.badge.lent { color: var(--accent); }
+.badge.maintenance { color: var(--amber); }
+.overdue .badge { color: var(--warn); }
+.loan { margin: 6px 0 0; color: var(--muted); font-size: 0.9rem; }
+.actions { display: flex; gap: 8px; margin-top: 10px; }
+.form { display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 10px; margin: 12px 0; align-items: end; }
+.form label { display: grid; gap: 4px; font-size: 0.85rem; color: var(--muted); }
+.empty { color: var(--muted); text-align: center; }
+table { width: 100%; border-collapse: collapse; margin-top: 12px; background: var(--card); font-size: 0.9rem; }
+th, td { text-align: left; padding: 8px; border-bottom: 1px solid var(--line); }
+tr.overdue td { color: var(--warn); }
+section { overflow-x: auto; }
+footer { margin-top: 24px; color: var(--muted); font-size: 0.8rem; }
