@@ -1,7 +1,7 @@
 # PC貸し出し管理（TypeScript版）
 
 社内の貸出用PCを「誰に・いつまで」貸しているかを管理するWebアプリです。
-以前 Google Apps Script で作った仕組みを、TypeScript / React で作り直しました。
+前職で Google Apps Script により開発・運用していた貸出管理（再現版：[pc-lending-system](https://github.com/mismd2026/pc-lending-system)）を、TypeScript / React で作り直しました。
 
 **デモ**：https://mismd2026.github.io/pc-lending-system-ts/
 
